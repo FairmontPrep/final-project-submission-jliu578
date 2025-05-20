@@ -46,7 +46,17 @@ public class PathFinding {
             for (int j = 0; j < A[0].length; j++) {
                 if (A[i][j] == 1 && !visited1[i][j]) {
                     dfs(A, visited1, i, j);
-                    System.out.println("Component " + componentCount++ + ": " + answerList);
+                    System.out.println("Component " + componentCount++ + ":");
+                    for (int x = 0; x < visited1.length; x++) {
+                        for (int y = 0; y < visited1[0].length; y++) {
+                            if (visited1[x][y]) {
+                                System.out.print("X ");
+                            } else {
+                                System.out.print(A[x][y] + " ");
+                            }
+                        }
+                        System.out.println();
+                    }
                     answerList.clear();
                 }
             }
@@ -58,7 +68,17 @@ public class PathFinding {
             for (int j = 0; j < B[0].length; j++) {
                 if (B[i][j] == 1 && !visited2[i][j]) {
                     dfs(B, visited2, i, j);
-                    System.out.println("Component " + componentCount++ + ": " + answerList);
+                    System.out.println("Component " + componentCount++ + ":");
+                    for (int x = 0; x < visited2.length; x++) {
+                        for (int y = 0; y < visited2[0].length; y++) {
+                            if (visited2[x][y]) {
+                                System.out.print("X ");
+                            } else {
+                                System.out.print(B[x][y] + " ");
+                            }
+                        }
+                        System.out.println();
+                    }
                     answerList.clear();
                 }
             }
