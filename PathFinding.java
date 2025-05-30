@@ -60,8 +60,14 @@ public class PathFinding {
             System.out.println("No path found.");
         }
 
-        startRow = 0; startCol = 9;
-        endRow = 6; endCol = 0;
+        // Reset before next search
+        visited2 = new boolean[B.length][B[0].length];
+        answerList.clear();
+
+        // Correct start and end points for yellow path
+        startRow = 1; startCol = 0;
+        endRow = 6; endCol = 6;
+
         System.out.println("Path from B:");
         if (findPath(B, visited2, startRow, startCol, endRow, endCol, answerList)) {
             for (String step : answerList) {
